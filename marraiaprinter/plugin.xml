@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="marraia.printer" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>marraiaprinter</name>
+    <js-module name="marraiaprinter" src="www/marraiaprinter.js">
+        <clobbers target="cordova.plugins.marraiaprinter" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="marraiaprinter">
+                <param name="android-package" value="marraia.printer.marraiaprinter" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <source-file src="src/android/marraiaprinter.java" target-dir="src/marraia/printer/marraiaprinter" />
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference"/>
+        <resource-file src="src/android/libgedi-0.190121.gpos800.aar" target="libs/libgedi-0.190121.gpos800.aar"/>
+    </platform>
+</plugin>
